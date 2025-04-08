@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой профиль</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <main class="main-content">
+      <section class="about-section">
+        <h2>О себе</h2>
+        <div class="about-content">
+          <img class="avatar" src = "./тихий.png">
+          <div class="about-text">
+            <p v-for="(paragraph, index) in about" :key="index">{{ paragraph }}</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="project-nav">
+        <a :href="projectLink" class="project-button">{{ projectButtonText }}</a>
+      </nav>
+
+      <section class="skills-section">
+        <h2>Мои навыки</h2>
+        <ul class="skills-list">
+          <li v-for="(skill, index) in skills" :key="index">{{ skill }}</li>
+        </ul>
+      </section>
+
+    <footer class="footer">
+      <div class="social-links">
+        <a v-for="(link, index) in socialLinks" :key="index" :href="link.url" target="_blank" class="social-icon">
+          {{ link.name }}
+        </a>
+      </div>
+      <p class="copyright">&copy; {{ currentYear }} iramorktum</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
