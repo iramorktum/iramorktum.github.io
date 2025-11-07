@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    font-family: Verdana;
+    font-variant: small-caps;
+    font-size: 14pt;
+    background-color: rgb(19, 19, 21);
+    color: rgba(240, 248, 255, 0.851);
+}
+
+#field {
+    background-image: url("background.jpg");
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 1000px;
+    max-height: 1000px;
+    border: 2px solid rgb(10, 10, 10);
+    outline: 4px solid rgb(53, 51, 56);
+    display: inline-block;
+}
+
+.cell {
+    width: 100px;
+    height: 150px;
+    border: 1px solid RGBA(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+}
+
+#character-wrapper {
+    position: relative;
+    bottom: 75px;
+}
+
+#character {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    background-image: url("cat.png");
+    background-size: 89%;
+    background-repeat: no-repeat;
+}
+
+.move {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.move-picture {
+    height: 150px;
+    width: 100px;
+}
+
+.move-name {
+    position: absolute;
+    font-size: 11px;
+    bottom: 43px;
+    left: 4px;
+    width: 92px;
+    text-align: center;
+    background-color: RGBA(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 0 3px 1px 3px;
+    margin: 0;
+    color: black;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+#left-container {
+    display: inline-block;
+    color: rgb(122, 122, 137);
+}
+
+#right-container {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: rgb(57, 57, 69);
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    outline: 4px solid rgb(38, 37, 40);
+    text-align: center;
+}
+
+#buttons {
+    text-align: center;
+}
+
+.checked {
+    background-color: rgb(100, 100, 113);
+}
+
+#sign-field {
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+    background-color: rgb(100, 100, 113);
+    color: black;
+    margin: 10px auto;
+}
+
+.little-cell {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid RGBA(0, 0, 0, 0.7);
+}
+
+.free {
+    background-color: RGBA(255, 255, 255, 0.25);
+}
+
+.little-move {
+    background-color: rgba(255, 255, 255, 0.668);
+}
+
+.bomb {
+    background-color: rgba(255, 0, 0, 0.23)
+}
+
+.header {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+#chat {
+    margin-bottom: 20px;
+}
+
+#replay-button {
+    padding: 10px;
+    background-color: rgb(57, 57, 69);
+    border: 2px solid rgb(0, 0, 0);
+    outline: 4px solid rgb(38, 37, 40);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#full-health, #half-health, #empty-health {
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px;
+    margin: 0 auto;
+}
+
+#full-health {
+    background-image: url("fullhealth.png");
+}
+
+#half-health {
+    background-image: url("halfhealth.png");
+}
+
+#empty-health {
+    background-image: url("emptyhealth.png");
+}
+
+#chat {
+    width: 550px;
+    border: 2px solid rgb(0, 0, 0);
+    outline: 4px solid rgb(38, 37, 40);
+    background-color: rgb(32, 32, 39);
+    padding: 20px;
+}
+
+#counter {
+    margin-top: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    padding: 10px 10px 10px 0;
+}
+
+a {
+    color: var(--light-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#to-main-page {
+    margin-bottom: 25px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Тренажёр</title>
+        <link href = "styles.css" rel = "stylesheet"></link>
+        <link rel = "shortcut icon" href = "favicon.png"></link>
+    </head>
+    <body>
+        <script src = "logic.js" type = "module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router@3.0.6"></script>
+        <div id = "app">
+            <div id = "main-container">
+                <div id = "left-container">
+                    <table id = "field">
+                        <tr v-for = "row in Array(6).fill().map((e, i) => i)">
+                            <td class = "cell" v-for = "column in Array(10).fill().map((e, i) => i)" @click = "mouseMove($event)">
+                                <div id = "character-wrapper">
+                                    <div id = "character" v-if = "row == you.y && column == you.x"></div>
+                                </div>
+                                <move v-if = "row == 5 && column == 0" :name = "'Волчий коготь'"></move>
+                                <move v-if = "row == 3 && column == 9" :name = "'Пологий склон'"></move>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id = "thanks">С любовью для Камнеступов!</div>
+                </div>
+                <div id = "right-container">
+                    <div id = "to-main-page"><a href = "../">Вернуться на главную</a></div>
+                    <div id = "chat">
+                        <div class = "header">Последнее сообщение:</div>
+                        <div id = "message">{{ message }}</div>
+                        <div id = "counter">Карт открыто: {{ wins }}</div>
+                        <div id = "replay-button" v-if = "isEnd" @click = "replay()">Переиграть</div>
+                        <div id = "replay-button" v-if = "isWin" @click = "replay()">Переиграть</div>
+                    </div>
+                    <div id = "sign-field-container">
+                        <div id = "buttons">
+                            <div class = "button" v-for = "count in Array(8).fill().map((e, i) => i)">
+                                {{ count }}
+                            </div>
+                            <div id = "move-button" class = "button">Переход</div>
+                            <div id = "bomb-button" class = "button">Мина</div>
+                            <div id = "clear-button" class = "button">Очистить</div>
+                        </div>
+                        <table id = "sign-field">
+                            <tr v-for = "row in Array(6).fill().map((e, i) => i + 1)">
+                                <td class = "little-cell" v-for = "column in Array(10).fill().map((e, i) => i + 1)"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id = "health-container">
+                        <div id = "full-health" v-if = "lifes == 1"></div>
+                        <div id = "half-health" v-else-if = "lifes == 0"></div>
+                        <div id = "empty-health" v-else></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
